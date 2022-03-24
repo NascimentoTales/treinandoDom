@@ -61,7 +61,7 @@ function criandoParDeCartas(princesa) {
         icon: princesa
     },
     {
-        d: criarID(princesa),
+        id: criarID(princesa),
         fliped: false,
         icon: princesa
     }]
