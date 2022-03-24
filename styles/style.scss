@@ -1,0 +1,89 @@
+$frontCardColor: #101c2c;
+$backCardColor: #05c3ff;
+$shadow: 10px 10px 10px rgba(0,0,0,0.45);
+$congratulations: white;
+$buttonColor: yellow;
+$letterColor: black;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Righteous', sans-serif;
+}
+body{
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // flex-direction: column;
+    // min-height: 100vh;
+
+    .card{
+        width: 150px;
+        height: 150px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform .5s;
+
+        .card_front, .card_back{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+            border-radius: 20px;
+            box-shadow: $shadow;
+            position: absolute;
+            backface-visibility: hidden;
+
+        }
+        .card_front{
+            background-color: $frontCardColor;
+            transform: rotateY(180deg);
+
+            .icon{
+                width: 110px;
+                height: 140px;
+                border-radius: 20px;
+            }
+        }
+        .card_back{
+            background-color: $backCardColor;
+            font-size: 30px;
+            color: $frontCardColor;
+        }
+    }
+    .flip{
+        transform: rotateY(180deg);
+    }
+    #gameOver{
+        position: absolute;
+        background-color: rgba(0,0,0,0.45);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        color: $congratulations;
+        top: 0;
+        display: none;
+
+        #restart{
+            font-size: 1.3rem;
+            padding: 10px;
+            background-color: $buttonColor;
+            border-radius: 5px;
+            margin-top: 20px;
+            color: $letterColor;
+            border: none;
+        }
+        #restart:hover{
+            cursor: pointer;
+            background-color: $frontCardColor;
+            color: $buttonColor;
+        }
+    }
+}
+

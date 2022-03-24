@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Righteous', sans-serif;
+}
+
+body .card {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
+body .card .card_front, body .card .card_back {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px;
+  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+body .card .card_front {
+  background-color: #101c2c;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+body .card .card_front .icon {
+  width: 110px;
+  height: 140px;
+  border-radius: 20px;
+}
+
+body .card .card_back {
+  background-color: #05c3ff;
+  font-size: 30px;
+  color: #101c2c;
+}
+
+body .flip {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+body #gameOver {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.45);
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2.5rem;
+  color: white;
+  top: 0;
+  display: none;
+}
+
+body #gameOver #restart {
+  font-size: 1.3rem;
+  padding: 10px;
+  background-color: yellow;
+  border-radius: 5px;
+  margin-top: 20px;
+  color: black;
+  border: none;
+}
+
+body #gameOver #restart:hover {
+  cursor: pointer;
+  background-color: #101c2c;
+  color: yellow;
+}
+/*# sourceMappingURL=style.css.map */
