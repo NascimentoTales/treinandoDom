@@ -7,11 +7,10 @@ const princesas = [
     '5',
     '6',
     '7',
-    '8'
+    '8',
+    '9',
+    '10'
 ]
-
-
-
 
 let cartas = null;
 
@@ -19,42 +18,26 @@ iniciar();
 
 function iniciar() {
     cartas = criarCartas(princesas);
+    embaralhar(cartas)
 
     console.log(cartas);
-    // embaralhar(cartas)
 }
 
-// function embaralhar(cartas) { 
+function embaralhar(cartas) { //Embaralhando as cartas
 
+    let currentIndex = cartas.length;
+    let randomIndex = 0;
 
-//     let currentIndex = ca;
-//     let randomIndex = 0;
-
-//     while (currentIndex !== 0) {
+    while (currentIndex !== 0) {
         
-//         randomIndex = Math.floor(Math.random() * currentIndex)
-//         currentIndex--;
+        randomIndex = Math.floor(Math.random() * currentIndex)
+        currentIndex--;
 
-//         [cartas[randomIndex], cartas[currentIndex]] = [cartas[currentIndex], cartas[randomIndex]] 
-//     }   
-// }
+        [cartas[randomIndex], cartas[currentIndex]] = [cartas[currentIndex], cartas[randomIndex]] 
+    }   
+}
 
-
-// function embaralhar(cartas) { 
-
-
-//     let currentIndex = ca;
-//     let randomIndex = 0;
-
-//     while (currentIndex !== 0) {
-        
-//         randomIndex = Math.floor(Math.random() * currentIndex)
-//         currentIndex--;
-
-//         [cartas[randomIndex], cartas[currentIndex]] = [cartas[currentIndex], cartas[randomIndex]] 
-//     }   
-// }
-
+criarCartas(princesas);
 
 function criarCartas(princesas) {
     
@@ -65,10 +48,9 @@ function criarCartas(princesas) {
         princesasArray.push(criandoParDeCartas(princesa)) //push introduz o par de cartas no array
     }
 
-    princesasArray.flatMap(par => par);  //flatMap desmembra o par de um array 10 pares viram 20 cartas 
-
-    console.log(princesasArray);
-
+    return princesasArray.flatMap(par => par);   //flatMap desmembra o par de um array 10 pares viram 20 cartas 
+    
+    // console.log(princesasArray.flatMap(par => par));
 }
 
 function criandoParDeCartas(princesa) {
@@ -89,3 +71,4 @@ function criarID(princesa) {
     
     return princesa + parseInt(Math.random() * 1000);
 }
+
