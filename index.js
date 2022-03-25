@@ -1,38 +1,70 @@
 const bairros = [
-    'afonso Pena',
-    'suiça',
-    'costeira'
-]
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g"
+];
 
-criarCarta(bairros);
+let cartas = null;
 
-function criarCarta(bairros) {
+iniciar()
+
+function iniciar(){
+    cartas =  criarCartas(bairros);
+    embaralhar(cartas)
+
+    console.log(cartas);
+
+}
+
+function embaralhar(cartas){
+
+    currentIndex = cartas.length;
+    randomIndex = 0
+
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [cartas[currentIndex], cartas[randomIndex]] = [cartas[randomIndex], cartas[currentIndex]]
+    }
+}
+
+function criarCartas(bairros){
     
     let arrayBairros = [];
 
-    for (const bairro of bairros) {
-        
-        arrayBairros.push(criarPar(bairro))
-    }
-    console.log(arrayBairros.flatMap(par => par));
-}
 
-function criarPar(bairro) {
-    
-    return [{
-        id: criarID(bairro),
-        fliped: false,
+    //as duas abaixu funcionam iguais
+    bairros.forEach(bairro => {
+        arrayBairros.push(criarPar(bairro))
+    });
+
+    // for (const bairro of bairros) {
+    //     arrayBairros.push(criarPar(bairro))
+    // }
+
+
+    return arrayBairros.flatMap(par => par);
+};
+
+function criarPar(bairro){
+
+    return[{
+        id: criarId(bairro),
+        flipped: false,
         icon: bairro
     },
     {
-        id: criarID(bairro),
-        fliped: false,
-        icon: bairro  
-    }];
+        id: criarId(bairro),
+        flipped: false,
+        icon: bairro
+    }]
 }
 
-function criarId(bairro) {
-    
-    return bairro + parseInt(Math.random() * 1000); 
+function criarId(bairro){
+    return bairro + parseInt(Math.random() * 100);  
 }
-
