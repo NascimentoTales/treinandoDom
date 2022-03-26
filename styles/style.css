@@ -6,6 +6,13 @@
   font-family: 'Righteous', sans-serif;
 }
 
+body {
+  width: 640px;
+  margin: auto;
+  height: 100vh;
+  margin-top: 10px;
+}
+
 body .card {
   width: 150px;
   height: 150px;
@@ -16,6 +23,12 @@ body .card {
   transition: -webkit-transform .5s;
   transition: transform .5s;
   transition: transform .5s, -webkit-transform .5s;
+  margin-bottom: 50px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 body .card .card_front, body .card .card_back {
